@@ -1,0 +1,35 @@
+<div class="panel-heading">
+    <ul class="nav nav-tabs">
+        <li{%if area == 'calendars' or not area%} class="active"{%endif%}>
+            <a href="#tabCalendars" data-toggle="tab">
+                <i class="glyphicon glyphicon-calendar"></i>
+                Calendarios
+            </a>
+        </li>
+        <li{%if area == 'careers'%} class="active"{%endif%}>
+            <a href="#tabCareers" data-toggle="tab">
+                <i class="glyphicon glyphicon-education"></i>
+                Carreras
+            </a>
+        </li>
+        <li{%if area == 'lessons'%} class="active"{%endif%}>
+            <a href="#tabLessons" data-toggle="tab">
+                <i class="glyphicon glyphicon-bookmark"></i>
+                Clases
+            </a>
+        </li>
+        <li{%if area == 'users'%} class="active"{%endif%}>
+            <a href="#tabUsers" data-toggle="tab">
+                <i class="glyphicon glyphicon-user"></i>
+                Usuarios
+            </a>
+        </li>
+        <li class="sr-only dropdown">
+            <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#tab4default" data-toggle="tab">Default 4</a></li>
+                <li><a href="#tab5default" data-toggle="tab">Default 5</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

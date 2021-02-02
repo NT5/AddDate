@@ -1,0 +1,33 @@
+{
+    "name": "uml/a-d-d-date",
+    "type": "project",
+    "description": "Almacena y muesta calendarios de la Universidad.",
+    "authors": [
+        {
+            "name": "Hendell Jonathan Porras Perez",
+            "email": "hendelporras@hotmail.com",
+            "homepage": "http://nt5.info"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AddDate\\": "res/php/app",
+            "AddDate\\Pages\\": "res/php/app/Pages",
+            "AddDate\\Users\\": "res/php/app/Users",
+            "AddDate\\Calendars\\": "res/php/app/Calendars",
+            "AddDate\\Careers\\": "res/php/app/Careers",
+            "AddDate\\Lessons\\": "res/php/app/Lessons",
+            "AddDate\\Database\\": "res/php/app/Database",
+            "AddDate\\Factory\\": "res/php/app/Factory",
+            "AddDate\\Util\\": "res/php/app/Util"
+        }
+    },
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=5.6",
+        "twig/twig": "1.*",
+        "twig/extensions": "1.*",
+        "components/jquery": "3.*",
+        "components/bootstrap": "3.*"
+    }
+}

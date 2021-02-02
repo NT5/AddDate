@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="page-header">
+        <h1>Primera ejecucion de <strong>AddDate</strong></h1>
+    </div>
+    <div class="alert alert-danger" role="alert">
+        <p>
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            No se detecto una instalación valida de <strong>AddDate</strong>, esto puede ser debido a una mala
+            configuración o es la primera vez que estas ejecutando la página,
+            a continuación se te mostrara un formulario de configuración para que procedas a realizar una instalación.
+        </p>
+        <hr/>
+        <p>
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            Asegúrate de contar con la dirección del servidor MySQL,
+            la contraseña, usuario y <strong>tener creada con anterioridad una base de datos</strong>
+        </p>
+    </div>
+    {% include 'pages/firts_run/dbconfig_form.twig' %}
+{% endblock %}

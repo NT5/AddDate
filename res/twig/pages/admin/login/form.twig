@@ -1,0 +1,23 @@
+<form class="form-horizontal" role="form" action="/admin/login" method="post">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Inicio de sesión</legend>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="token">
+                <i class="glyphicon glyphicon-lock"></i>
+                Clave
+            </label>  
+            <div class="col-md-4">
+                <input id="token" name="token" type="password" placeholder="Clave de acceso" class="form-control input-md" required="">
+                <span class="help-block">El token de acceso tiene 4 caracteres y se te proporciono uno al instalar la página</span>  
+            </div>
+        </div>
+        <!-- Submit button-->
+        <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-inverse btn-block">Ingresar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

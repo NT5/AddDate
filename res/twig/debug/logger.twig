@@ -1,0 +1,29 @@
+<div class="container">
+    {% for log_area, log_contents in logs %}
+        <div class="table-responsive">
+            <h1>{{ log_area }}</h1>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Function</th>
+                        <th>Microtime</th>
+                        <th>Date</th>
+                        <th>Text</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log_content in log_contents %}
+                        <tr>
+                            <td>{{ log_content.class|raw }}</td>
+                            <td>{{ log_content.function|raw }}</td>
+                            <td>{{ log_content.microtime|raw }}</td>
+                            <td>{{ log_content.date|raw }}</td>
+                            <td>{{ log_content.text|raw }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+</div>

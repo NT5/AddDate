@@ -1,0 +1,51 @@
+<div class="tab-pane fade {%if area == 'users'%} in active {%endif%}" id="tabUsers">
+    <form role="form" class="form-horizontal" action="/admin/users" method="post">
+        <legend>Añadir usuario</legend>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Usuario</label>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input name="user_name" placeholder="Nombre completo del usuario" class="form-control" style="float: left; width: 50%;" title="Nombre" type="text" required="">
+                            <input name="user_email" placeholder="Correo electronico" class="form-control" style="float: left; width: 50%;" title="Email" type="text" required="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr/>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>E-Mail</th>
+                    <th>Token</th>
+                    <th>Creado el</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users_list %}
+                    <tr>
+                        <td>
+                            <form action="/admin/users" method="post">
+                                <button name="delete_user" value="{{ user.getId }}" type="submit" style="font-size: 1em; border:0px solid transparent;" class="glyphicon glyphicon-remove-circle"></button>
+                                {{ user.getFullName }}
+                            </form>
+                        </td>
+                        <td>{{ user.getEmail }}</td>
+                        <td>{{ user.getToken }}</td>
+                        <td>{{ user.getCreateAt|localizeddate('full', 'none', 'es') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

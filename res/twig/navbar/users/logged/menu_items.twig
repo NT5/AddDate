@@ -1,0 +1,45 @@
+<li>
+    <a href="#" onclick="return false;" title="{{ user_data.getFullName|raw }}" data-toggle="tooltip" data-placement="left">
+        <i class="glyphicon glyphicon-user"></i>
+        Hola {{ user_data.getFullName|split(' ')[0] }}!
+    </a>
+</li>
+<li role="separator" class="divider"></li>
+<li>
+    <a href="/admin/">
+        <i class="glyphicon glyphicon-cog"></i>
+        Administración
+    </a>
+</li>
+<li role="separator" class="divider"></li>
+<li>
+    <a href="/admin/calendars">
+        <i class="glyphicon glyphicon-calendar"></i>
+        Calendarios
+    </a>
+</li>
+<li>
+    <a href="/admin/careers">
+        <i class="glyphicon glyphicon-education"></i>
+        Carreras
+    </a>
+</li>
+<li>
+    <a href="/admin/lessons">
+        <i class="glyphicon glyphicon-bookmark"></i>
+        Clases
+    </a>
+</li>
+<li>
+    <a href="/admin/users">
+        <i class="glyphicon glyphicon-user"></i>
+        Usuarios
+    </a>
+</li>
+<li role="separator" class="divider"></li>
+<li>
+    <a href="/admin/logout">
+        <i class="glyphicon glyphicon-off"></i> 
+        Cerrar sesión
+    </a>
+</li>

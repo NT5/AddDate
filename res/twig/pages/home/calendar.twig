@@ -1,0 +1,60 @@
+{% extends "base.twig" %}
+{% block content %}
+    <br/>
+    <div class="container">
+        {% if calendar_data %}
+            <h3>{{ calendar_data.getCareer.getName }} <small>{{ calendar_data.getCreateAt|localizeddate('full', 'none', 'es') }}</small></h3>
+            <hr/>
+            <div class="well">
+                <h6>Observaciones</h6>
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                {{ calendar_data.getObservations }}
+                <hr/>
+                <small>{{ calendar_data.getCreateBy.getFullName }}</small>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" style="font-size: 1.2em;">
+                    <thead>
+                        <tr>
+                            <th class="text-center">
+                                # de Bloque
+                            </th>
+                            <th class="text-center">
+                                Clase
+                            </th>
+                            <th class="text-center">
+                                Realización
+                            </th>
+                            <th class="text-center">
+                                Reprogramación
+                            </th>
+                            <th class="text-center">
+                                Especial
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for data in calendar_data.getCalendarData %}
+                            <tr>
+                                <td class="text-center">{{ data.getBlockId }}</td>
+                                <td class="text-center">{{ data.getLesson.getName }}</td>
+                                <td class="text-center">{{ data.getDoDate|localizeddate('full', 'none', 'es') }}</td>
+                                <td class="text-center">{{ data.getReprogrammingDate|localizeddate('full', 'none', 'es') }}</td>
+                                <td class="text-center" >{{ data.getSpecialDate|localizeddate('full', 'none', 'es') }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="page-header">
+                <h1>¡No se encontró el calendario especificado!</h1>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                Al parecer estas intentando acceder a un calendario antiguo, pero ya no existe,
+                puedes regresar a la página principal <a href="/home">aquí</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

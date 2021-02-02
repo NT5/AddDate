@@ -1,0 +1,21 @@
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^res/libs/jquery(/.*)?$ ./vendor/components/jquery/$1
+RewriteRule ^res/libs/bootstrap(/.*)?$ ./vendor/components/bootstrap/$1
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^home*$ ./index.php?p=home
+RewriteRule ^home\/(\d+)*$ ./index.php?p=home&c=$1
+RewriteRule ^home\/sort\/(\d+)*$ ./index.php?p=home&s=$1
+RewriteRule ^search*$ ./index.php?p=search
+RewriteRule ^admin\/(:?login|logout|calendars|careers|lessons|users)*$ ./index.php?p=admin&s=$1
+RewriteRule ^about\/(:?faq)*$ ./index.php?p=about&s=$1
+
+<Files config.ini>
+    order allow,deny
+    deny from all
+</Files>

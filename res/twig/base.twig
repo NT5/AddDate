@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="AddDate Calendar">
+            <meta name="author" content="Hendell Jonathan Porras Perez">
+            <link rel="icon" href="/icon.png">
+            <title>{{ page_title }}</title>
+            <link href="/res/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="/res/css/style.css" rel="stylesheet">
+            <script src="/res/libs/jquery/jquery.min.js"></script>
+            <script src="/res/libs/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/res/js/jquery/sprite-animate.js"></script>
+            <script src="/res/js/script.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block navbar %}
+            {{ include('navbar/navbar.twig') }}
+        {% endblock %}
+        <div class="container">
+            {% block content %}
+                {{ include('container.twig') }}
+            {% endblock %}
+        </div><!-- /.container -->
+        {% block footer %}
+            {{ include('footer.twig') }}
+        {% endblock %}
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click aqui para ir arriba" data-toggle="tooltip" data-placement="left">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><!--./back-to-top -->
+    </body>
+</html>

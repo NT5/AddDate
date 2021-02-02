@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="page-header">
+        <h1>No se encontraron usuarios</h1>
+    </div>
+    <div class="alert alert-success" role="alert">
+        <p>
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            Al parecer aun no se genero ningún usuario para administrar la página
+        </p>
+    </div>
+    {% include ('pages/firts_run/no_users/form.twig') %}
+{% endblock %}

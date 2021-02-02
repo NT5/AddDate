@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+{% block content %}
+    {% if search_term and search_term|length > 1 and search_res and search_res|length >= 1 %}
+        <div class="page-header">
+            <h1>Mostrando resultados de: "{{ search_term }}"</h1>
+        </div>
+        <br/>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Carrera</th>
+                        <th>Creado el</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for calendar in search_res %}
+                        <tr class="clickable-row" style="cursor: pointer;" data-href="/home/{{ calendar.getId }}">
+                            <td>
+                                {{ calendar.getCareer.getName }}
+                            </td>
+                            <td>{{ calendar.getCreateAt|localizeddate('full', 'none', 'es') }}</td>
+                            <td>{{ calendar.getObservations }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="page-header">
+            <h1>¡No se encontro nada!</h1>
+        </div>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            Puedes intentar buscar por el comentario en las observaciones del calendario, Por ejemplo "I Trimestre"
+        </div>
+    {% endif %}
+{% endblock %}
